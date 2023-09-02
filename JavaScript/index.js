@@ -27,20 +27,22 @@ async function showWeather(city) {
         pressure_in.innerText = response.current.pressure_in + " in";
         wind_kph.innerText = response.current.wind_kph + " kph";
         card_2_status.innerText = response.current.condition.text;
-        card_2_png.src = response.current.condition.icon;
+        card_2_png.src = "https:" + response.current.condition.icon;
 
 
-        for(let i = 0 ; i < 24 ; i++)
-        {
+        for (let i = 0; i < 24; i++) {
             let hour = document.getElementById(`${i}-forecast`);
-            hour.children[0].textContent = response.forecast.forecastday[0].hour[i].time;
-            hour.children[1].children[0].src = response.forecast.forecastday[0].hour[i].condition.icon;
+            if (i < 12)
+                hour.children[0].textContent = response.forecast.forecastday[0].hour[i].time + "AM";
+            else
+                hour.children[0].textContent = response.forecast.forecastday[0].hour[i].time + "PM";
+            hour.children[1].children[0].src = "https:" + response.forecast.forecastday[0].hour[i].condition.icon;
             hour.children[2].textContent = response.forecast.forecastday[0].hour[i].temp_c + " C";
             hour.children[3].textContent = response.forecast.forecastday[0].hour[i].humidity;
             hour.children[4].textContent = response.forecast.forecastday[0].hour[i].pressure_in + " in";
             hour.children[5].textContent = response.forecast.forecastday[0].hour[i].chance_of_rain + "%";
         }
-        
+
     })
 
 
@@ -49,8 +51,7 @@ async function showWeather(city) {
 let search = () => {
     let value = document.getElementById("search-city").value;
 
-    if(value)
-    {
+    if (value) {
         showWeather(value);
     }
 }
