@@ -1,7 +1,14 @@
 
 async function showWeather(city) {
+
+    console.clear();
+
     let URL = `https://api.weatherapi.com/v1/forecast.json?key=a29d288b459e4a58bdb45946230209&q=${city}&days=1&aqi=no&alerts=no`;
     await fetch(URL).then(response => {
+
+        if (!response.ok) {
+            return Promise.reject(response);
+        }
         return response.json();
     }).then(response => {
 
@@ -43,9 +50,20 @@ async function showWeather(city) {
             hour.children[5].textContent = response.forecast.forecastday[0].hour[i].chance_of_rain + "%";
         }
 
+    }).catch((error) => {
+        if (typeof error.json === "function") {
+            error.json().then(jsonError => {
+                console.log("Json error from API");
+                alert(jsonError.error.message);
+            }).catch(genericError => {
+                console.log("Generic error from API");
+                alert(jsonError.error.message);
+            });
+        } else {
+            console.log("Fetch error");
+            alert(jsonError.error.message);
+        }
     })
-
-
 }
 
 let search = () => {
@@ -54,5 +72,14 @@ let search = () => {
     if (value) {
         showWeather(value);
     }
+}
+
+let alert = (message) =>{
+    let alert = document.getElementById("alert");
+    alert.innerText = message;
+    alert.style.display = "block";
+    setTimeout(() => {
+        alert.style.display = "none";
+    }, 1800);
 }
 
