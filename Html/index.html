@@ -44,7 +44,7 @@
 
     <div class="alert alert-danger mt-2 float-sm-end" style="display: none;" role="alert" id="alert">
         A simple danger alert—check it out!
-      </div>
+    </div>
 
     <div class="h1 container my-3" id="heading">
         Weather of City
@@ -57,7 +57,8 @@
     <div class="container my-3">
         <div class="row">
             <div class="col-sm-4 my-3">
-                <div class="card" style="height: 200px;">
+                <div class="card border-1 border-dark"
+                    style="height: 200px; background-image: url(../Images/sky.jpeg); color: white;">
                     <div class="card-body text-center">
                         <h2 class="card-title">Temperature:</h2>
                         <h3 class="card-text" id="temp-card"></h3>
@@ -67,7 +68,8 @@
                 </div>
             </div>
             <div class="col-sm-4 my-3">
-                <div class="card" style="height: 200px;">
+                <div class="card border-1 border-dark"
+                    style="height: 200px; background-image: url(../Images/sky.jpeg); color: white;">
                     <div class="card-body text-center">
                         <h2 class="card-title">Condition:</h2>
                         <h2 class="card-title" id="card-2-status"></h2>
@@ -76,7 +78,8 @@
                 </div>
             </div>
             <div class="col-sm-4 my-3">
-                <div class="card" style="height: 200px;">
+                <div class="card border-1 border-dark"
+                    style="height: 200px; background-image: url(../Images/sky.jpeg); color: white;">
                     <div class="card-body text-center">
                         <h2 class="card-title">Chance of Rain:</h2>
                         <h3 class="card-text" id="rain-card"></h3>
@@ -86,8 +89,8 @@
         </div>
     </div>
 
-    <div class="container">
-        <table class="table border border-dark ">
+    <div class="container" >
+        <table class="table border border-dark" style="background-color: #e3f2fd;">
             <thead>
                 <tr>
                     <th scope="col">Temperature</th>
@@ -120,7 +123,7 @@
     </div>
 
     <div class="container overflow-auto">
-        <table class="table border border-dark text-center ">
+        <table class="table border border-dark text-center " style="background-color: #e3f2fd;">
             <thead>
                 <tr>
                     <th scope="col">Date / Time</th>
@@ -329,30 +332,24 @@
     </div>
     <hr>
     <footer class="text-center bg-white">
-        <!-- Grid container -->
         <div class="container">
-            <!-- Section: Social media -->
-            <section class="mb-2">
-                <!-- Google -->
+            <section>
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://mailto:rvermajio78300@gmail.com"
                     data-mdb-ripple-color="dark"><i class="bi bi-google"></i></a>
 
-                <!-- Instagram -->
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1"
                     href="https://instagram.com/vrohit.exe?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="
                     data-mdb-ripple-color="dark"><i class="bi bi-instagram"></i></a>
 
-                <!-- Linkedin -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://linkedin.com/in/rohit-verma-639837281" role="button" data-mdb-ripple-color="dark"><i class="bi bi-linkedin"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://linkedin.com/in/rohit-verma-639837281" role="button" data-mdb-ripple-color="dark"><i
+                        class="bi bi-linkedin"></i></a>
 
-                <!-- Github -->
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1"
                     href="https://github.com/RohitVerma2003?tab=repositories" role="button"
                     data-mdb-ripple-color="dark"><i class="bi bi-github"></i></a>
             </section>
-            <!-- Section: Social media -->
         </div>
-        <!-- Grid container -->
     </footer>
 
 </body>
